@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 import { ButtonModule } from 'primeng/button';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -51,7 +53,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ButtonModule,
     RadioButtonModule,
     InputNumberModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatMenuModule
 
   ],
   providers: [],

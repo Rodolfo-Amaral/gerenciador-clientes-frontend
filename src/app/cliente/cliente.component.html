@@ -10,11 +10,20 @@
             <div class="espaco"></div>
             <mat-icon class="botao-home" routerLink="">home</mat-icon>
             <div class="links-cli-cid">
-                <a mat-button routerLink="/clientes">Clientes</a>
-                <a mat-button routerLink="/cidades">Cidades</a>
+                <button mat-button [matMenuTriggerFor]="aboveMenu">Clientes</button>
+                <mat-menu #aboveMenu="matMenu" yPosition="above">
+                    <button mat-menu-item routerLink="/cadastros/clientes">
+                        Cadastrar Cliente
+                    </button>
+                </mat-menu>
+
+                <button mat-button [matMenuTriggerFor]="belowMenu">Cidades</button>
+                <mat-menu #belowMenu="matMenu" yPosition="below">
+                    <button mat-menu-item>Cadastros</button>
+                </mat-menu>
             </div>
         </mat-toolbar>
-        <!--BODY-->
+        <!--BODY
         <div class="espaco-entre-navbar"></div>
         <mat-card class="card-header">
             <mat-card-header>
@@ -34,7 +43,20 @@
                 <button mat-raised-button color="green">PESQUISAR</button>
                 <button mat-raised-button color="warn">LIMPAR</button>
             </div>
-        </mat-card-actions>
-        <p>CLIENTES OK</p>
+        </mat-card-actions>-->
     </div>
+    <p>buscar cliente</p>
+    <p>cliente component</p>
+    <p>buscar cliente</p>
+    <p>cliente component</p>
+    <p>buscar cliente</p>
+    <p>cliente component</p>
+    <p>buscar cliente</p>
+    <p>cliente component</p>
+    <p>buscar cliente</p>
+    <p>cliente component</p>
+    <p>buscar cliente</p>
+    <p>cliente component</p>
+    <p>buscar cliente</p>
+    <p>cliente component</p>
 </div>

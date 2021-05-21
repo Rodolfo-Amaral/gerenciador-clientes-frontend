@@ -1,5 +1,5 @@
 .mat-toolbar {
-    position: relative;
+    position: fixed;
     width: 100%;
     height: 65px;
     background-color: #fff;
@@ -7,18 +7,10 @@
     border-width: 1px 0;
     box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
-
-.main, .app-body{
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 1%;
-    min-width: 0;
-    display: block;
-    box-sizing: border-box;
-    margin: 0;
-    background-color: #e4e5e6;
+  
+.mat-typography{
+    background-color: red;
 }
-
 .mat-icon{
       padding: 0;
       vertical-align: -20%;
@@ -27,50 +19,15 @@
 .espaco {
       flex: 1 1 auto;
 }
-.espaco-entre-navbar{
-    height: 80px;
-}
 
 .logo-name {
     text-decoration: none;
     color: black;
 }
-
 .botao-home {
     cursor: pointer;
-    padding: 1rem;
-    width: 20px;
+    padding: 15px;
+    width: max-content;
     display: flex;
-}
-
-.card-header{
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    border-bottom: 1px solid #c8ced3;
-    background-color: #f0f3f5;
-    height: 25px;
-    width: 100%;
-    display: flex;
-    
-}
-.icon-card-header{
-    padding: 0;
-    vertical-align: -18%;
-}
-
-.corpo-card-input{
-    width: 20%;
-    display: flexbox;
-    padding-left: 120px;
-    padding-top: 12px;
-    
-}
-.filtro-header {
-    background-color: #f86c6b;
-   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.card-action-buttons{
-    display: table-cell;
-    width: 490px;
+    align-items: center;
 }

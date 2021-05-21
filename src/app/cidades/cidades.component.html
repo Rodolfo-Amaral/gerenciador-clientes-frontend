@@ -9,10 +9,34 @@
         <div class="espaco"></div>
         <mat-icon class="botao-home" routerLink="">home</mat-icon>
         <div class="links-cli-cid">
-            <a mat-button routerLink="/clientes">Clientes</a>
-            <a mat-button routerLink="/cidades">Cidades</a>
+            <button mat-button [matMenuTriggerFor]="aboveMenu">Clientes</button>
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
+                <button mat-menu-item routerLink="/cadastros/clientes">
+                    Cadastrar Cliente
+                </button>
+            </mat-menu>
+
+            <button mat-button disabled [matMenuTriggerFor]="belowMenu">Cidades</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Cadastros</button>
+            </mat-menu>
         </div>
     </mat-toolbar>
     <!--BODY-->
     <p>CIDADES OK</p>
+    <p>CIDADES COMPONENT</p>
+    <p>CIDADES OK</p>
+    <p>CIDADES COMPONENT</p>
+    <p>CIDADES OK</p>
+    <p>CIDADES COMPONENT</p>
+    <p>CIDADES OK</p>
+    <p>CIDADES COMPONENT</p>
+    <p>CIDADES OK</p>
+    <p>CIDADES COMPONENT</p>
+    <p>CIDADES OK</p>
+    <p>CIDADES COMPONENT</p>
+    <p>CIDADES OK</p>
+    <p>CIDADES COMPONENT</p>
+    <p>CIDADES OK</p>
+    <p>CIDADES COMPONENT</p>
 </div>

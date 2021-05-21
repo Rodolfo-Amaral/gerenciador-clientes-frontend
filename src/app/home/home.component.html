@@ -7,10 +7,26 @@
             </a>
         </span>
         <div class="espaco"></div>
-        <mat-icon class="botao-home" routerLink="">home</mat-icon>
+        <mat-icon class="botao-home" routerLink="" aling="center">home</mat-icon>
         <div class="links-cli-cid">
-            <a mat-button routerLink="/clientes">Clientes</a>
-            <a mat-button routerLink="/cidades">Cidades</a>
+            <button mat-button [matMenuTriggerFor]="aboveMenu">
+                Clientes
+            </button>
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
+                <button mat-menu-item routerLink="cadastros/clientes">
+                    Cadastrar
+                </button>
+                <button mat-menu-item routerLink="clientes">
+                    Buscar Clientes
+                </button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="belowMenu">Cidades</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item routerLink="cidades">
+                    Cadastros
+                </button>
+            </mat-menu>
         </div>
     </mat-toolbar>
 </div>

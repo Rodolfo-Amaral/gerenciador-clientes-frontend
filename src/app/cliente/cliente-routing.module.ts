@@ -12,7 +12,7 @@ const rotas: Routes = [
     { path: 'clientes', component: ClienteComponent },
     { path: 'cidades', component: CidadesComponent },
     { path: 'clientes/:cpfCnpj', component: ListarClientesComponent },
-    { path: 'cadastrar', component: CadastroClienteComponent },
+    { path: 'cadastros/clientes', component: CadastroClienteComponent },
     { path: 'editar/:id', component: EditarClientesComponent },
 ];
 
