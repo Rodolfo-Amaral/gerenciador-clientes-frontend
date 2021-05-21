@@ -1,17 +1,40 @@
 <div>
-    <!--CABEÇALHO-->
-    <mat-toolbar>
-        <span>
-            <a class="logo-name" routerLink="">
-                <mat-icon>manage_accounts</mat-icon>Gerenciador de Clientes
-            </a>
-        </span>
-        <div class="espaco"></div>
-        <mat-icon class="botao-home" routerLink="">home</mat-icon>
-        <div class="links-cli-cid">
-            <a mat-button routerLink="/clientes">Clientes</a>
-            <a mat-button routerLink="/cidades">Cidades</a>
-        </div>
-    </mat-toolbar>
-    <p>CLIENTE OK</p>
+    <div class="main">
+        <!--CABEÇALHO-->
+        <mat-toolbar>
+            <span>
+                <a class="logo-name" routerLink="">
+                    <mat-icon>manage_accounts</mat-icon>Gerenciador de Clientes
+                </a>
+            </span>
+            <div class="espaco"></div>
+            <mat-icon class="botao-home" routerLink="">home</mat-icon>
+            <div class="links-cli-cid">
+                <a mat-button routerLink="/clientes">Clientes</a>
+                <a mat-button routerLink="/cidades">Cidades</a>
+            </div>
+        </mat-toolbar>
+        <!--BODY-->
+        <div class="espaco-entre-navbar"></div>
+        <mat-card class="card-header">
+            <mat-card-header>
+                <mat-card-title>
+                    <div class="filtro-header">
+                        <mat-icon class="icon-card-header">filter_alt</mat-icon>Pesquise pelo CPF/CNPJ
+                    </div>
+                </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+        <mat-form-field floatLabel="auto" appearance="outline" class="corpo-card-input">
+            <mat-label>CPF/CNPJ</mat-label>
+            <input matInput class="mat-input-cpf-pesquisa">
+        </mat-form-field>
+        <mat-card-actions>
+            <div class="card-action-buttons">
+                <button mat-raised-button color="green">PESQUISAR</button>
+                <button mat-raised-button color="warn">LIMPAR</button>
+            </div>
+        </mat-card-actions>
+        <p>CLIENTES OK</p>
+    </div>
 </div>

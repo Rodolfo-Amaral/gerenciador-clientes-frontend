@@ -9,8 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
-import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -22,6 +23,7 @@ import { CidadesComponent } from './cidades/cidades.component';
 import { ListarClientesComponent } from './cliente/listar-clientes/listar-clientes.component';
 import { CadastroClienteComponent } from './cliente/cadastro-cliente/cadastro-cliente.component';
 import { EditarClientesComponent } from './cliente/editar-clientes/editar-clientes.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -42,12 +44,14 @@ import { EditarClientesComponent } from './cliente/editar-clientes/editar-client
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
+    MatCardModule,
+    MatInputModule,
     FormsModule,
     CommonModule,
-    InputTextModule,
     ButtonModule,
     RadioButtonModule,
-    InputNumberModule
+    InputNumberModule,
+    FlexLayoutModule
 
   ],
   providers: [],

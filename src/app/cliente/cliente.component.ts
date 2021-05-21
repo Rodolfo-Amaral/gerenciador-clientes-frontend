@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from './cliente.model';
 
 @Component({
   selector: 'app-cliente',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent implements OnInit {
+  cliente: Cliente[] = [];
 
   constructor() { }
 
