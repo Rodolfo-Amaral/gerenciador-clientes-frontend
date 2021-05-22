@@ -13,19 +13,14 @@
                 Clientes
             </button>
             <mat-menu #aboveMenu="matMenu" yPosition="above">
-                <button mat-menu-item routerLink="cadastros/clientes">
+                <button mat-menu-item routerLink="clientes/cadastrar">
                     Cadastrar
                 </button>
                 <button mat-menu-item routerLink="clientes">
                     Buscar Clientes
                 </button>
             </mat-menu>
-            <button mat-button [matMenuTriggerFor]="belowMenu">Cidades</button>
-            <mat-menu #belowMenu="matMenu" yPosition="below">
-                <button mat-menu-item routerLink="cidades">
-                    Cadastros
-                </button>
-            </mat-menu>
+            <button mat-button routerLink="/cidades">Cidades</button>
         </div>
     </mat-toolbar>
 </div>

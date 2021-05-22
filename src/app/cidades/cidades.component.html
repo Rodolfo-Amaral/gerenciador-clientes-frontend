@@ -11,7 +11,7 @@
         <div class="links-cli-cid">
             <button mat-button [matMenuTriggerFor]="aboveMenu">Clientes</button>
             <mat-menu #aboveMenu="matMenu" yPosition="above">
-                <button mat-menu-item routerLink="/cadastros/clientes">
+                <button mat-menu-item routerLink="/clientes/cadastrar">
                     Cadastrar
                 </button>
                 <button mat-menu-item routerLink="/clientes">
@@ -19,27 +19,29 @@
                 </button>
             </mat-menu>
 
-            <button mat-button disabled [matMenuTriggerFor]="belowMenu">Cidades</button>
-            <mat-menu #belowMenu="matMenu" yPosition="below">
-                <button mat-menu-item>Cadastros</button>
-            </mat-menu>
+            <button mat-button disabled>Cidades</button>
         </div>
     </mat-toolbar>
 </div>
 <!--BODY-->
-<p>CIDADES OK</p>
-<p>CIDADES COMPONENT</p>
-<p>CIDADES OK</p>
-<p>CIDADES COMPONENT</p>
-<p>CIDADES OK</p>
-<p>CIDADES COMPONENT</p>
-<p>CIDADES OK</p>
-<p>CIDADES COMPONENT</p>
-<p>CIDADES OK</p>
-<p>CIDADES COMPONENT</p>
-<p>CIDADES OK</p>
-<p>CIDADES COMPONENT</p>
-<p>CIDADES OK</p>
-<p>CIDADES COMPONENT</p>
-<p>CIDADES OK</p>
-<p>CIDADES COMPONENT</p>
+<!--FILTROS-->
+<div class="filtro-busca-cidade container-fluid" cellspacing="0">
+    <mat-card class="container-fluid">
+        <mat-card-title class="busque-uma-cidade">
+            <span class="material-icons">filter_list</span>
+            Filtros
+        </mat-card-title>
+        <mat-form-field class="example-full-width col-md-3">
+            <mat-label>Nome da cidade</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-card-actions>
+            <div class="card-action-buttons col-md-3">
+                <button mat-raised-button type="submit" class="botao-buscar-cidade">
+                    BUSCAR
+                </button>
+                <button mat-raised-button color="warn" type="reset">LIMPAR</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>

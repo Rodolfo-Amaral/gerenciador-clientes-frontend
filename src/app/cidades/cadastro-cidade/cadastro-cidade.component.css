@@ -31,10 +31,22 @@
     display: flex;
     align-items: center;
 }
-.button-busca-cliente {
-    background-color:darkcyan;
-    color: white;
+
+.card-cadastro-cli {
+    max-width: 900px;
+    height: max-content;
+    align-self: center;
+    flex: 1 1 auto;
+    padding: .75rem;
+
   }
-.accordion-headers-align, .mat-panel-description{
-  flex-basis: 0;
+.nome-completo, .cpf-cad-cli{
+    width: 100%;
 }
+.icon-cad-cli {
+    background-image: url('https://img.icons8.com/ios/452/city.png');
+    background-size: cover;
+  }
+  .botao-salvar-cad-cli{
+      background-color: #4dbd74;
+  }

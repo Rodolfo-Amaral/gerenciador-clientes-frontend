@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,10 +35,9 @@ import { EditarClientesComponent } from './cliente/editar-clientes/editar-client
 import { ListarClientesComponent } from './cliente/listar-clientes/listar-clientes.component';
 import { HomeComponent } from './home/home.component';
 import { MatNativeDateModule } from '@angular/material/core';
-
-
-
-
+import { CadastroCidadeComponent } from './cidades/cadastro-cidade/cadastro-cidade.component';
+import { BuscarCidadeComponent } from './cidades/buscar-cidade/buscar-cidade.component';
+import { EditarCidadeComponent } from './cidades/editar-cidade/editar-cidade.component';
 
 
 @NgModule({
@@ -48,7 +48,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     CidadesComponent,
     ListarClientesComponent,
     CadastroClienteComponent,
-    EditarClientesComponent
+    EditarClientesComponent,
+    CadastroCidadeComponent,
+    BuscarCidadeComponent,
+    EditarCidadeComponent
 
   ],
   imports: [
@@ -67,6 +70,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
     MatPaginatorModule,
     MatAutocompleteModule,
+    MatExpansionModule,
     MatSelectModule,
     MatStepperModule,
     MatRadioModule,
