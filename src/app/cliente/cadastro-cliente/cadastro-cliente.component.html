@@ -1,22 +1,176 @@
 <!--CABEÇALHO-->
-<mat-toolbar>
-    <span>
-        <a class="logo-name" routerLink="">
-            <mat-icon>manage_accounts</mat-icon>Gerenciador de Clientes
-        </a>
-    </span>
-    <div class="espaco"></div>
-    <mat-icon class="botao-home" routerLink="">home</mat-icon>
-    <div class="links-cli-cid">
-        <button mat-button [matMenuTriggerFor]="menu">Clientes</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/clientes">
-                Buscar Clientes
-            </button>
-        </mat-menu>
-        <a mat-button routerLink="/cidades">Cidades</a>
-    </div>
-</mat-toolbar>
+<div class="navbar navbar-static-top">
+    <mat-toolbar>
+        <span>
+            <a class="logo-name" routerLink="">
+                <mat-icon>manage_accounts</mat-icon>Gerenciador de Clientes
+            </a>
+        </span>
+        <div class="espaco"></div>
+        <mat-icon class="botao-home" routerLink="">home</mat-icon>
+        <div class="links-cli-cid">
+            <button mat-button [matMenuTriggerFor]="menu">Clientes</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/clientes">
+                    Buscar Clientes
+                </button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="belowMenu">Cidades</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item routerLink="/cidades">
+                    Cadastros
+                </button>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
+</div>
+
+<!--Cadastro-->
+<mat-card class="card-cadastro-cli card text-left container-fluid">
+    <mat-card-header>
+        <div mat-card-avatar class="icon-cad-cli"></div>
+        <mat-card-title>Cadastro de Clientes</mat-card-title>
+        <mat-card-subtitle>
+            <a routerLink="">Página Inicial</a>
+            > Cadastros > Clientes
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="row g-3 container-fluid">
+            <div class="col-md-12">
+                <mat-form-field class="nome-completo col-md-12">
+                    <mat-label>Nome Completo</mat-label>
+                    <input matInput placeholder="Digite o nome...">
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="cpf-cad-cli col-md-11">
+                    <mat-label>CPF</mat-label>
+                    <input matInput #cpf maxlength="11" placeholder="Sem pontuação">
+                    <mat-hint align="end">{{cpf.value.length}} / 11</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="sexo-cad-cli col-md-12">
+                    <mat-label>Sexo</mat-label>
+                    <mat-select>
+                        <!--
+                        <mat-option *ngFor="let sexo of sexo" [value]="sexo.value">
+                            {{sexo.viewValue}}
+                        </mat-option>-->
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="sexo-cad-cli col-md-6">
+                    <mat-label>Estado Civil</mat-label>
+                    <mat-select>
+                        <mat-option value="solteiro(a)">Solteiro(a)</mat-option>
+                        <mat-option value="casado(a)">Casado(a)</mat-option>
+                        <mat-option value="separado(a)">Separado(a)</mat-option>
+                        <mat-option value="divorciado(a)">Divorciado(a)</mat-option>
+                        <mat-option value="viuvo(a)">Viúvo(a)</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="logradouro-cliente col-md-12">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput placeholder="Nome da rua/avenida/etc...">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="col-md-6">
+                    <mat-label>Data de Nascimento</mat-label>
+                    <input matInput [matDatepicker]="datePicker" fromControlName="dataDeNascimento" name="nascimento">
+                    <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #datePicker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="estado-cad-cli col-md-6">
+                    <mat-label>UF</mat-label>
+                    <mat-select>
+                        <!--
+                        <mat-option *ngFor="let sexo of sexo" [value]="sexo.value">
+                            {{sexo.viewValue}}
+                        </mat-option>-->
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="estado-cad-cli col-md-12">
+                    <mat-label>Cidade</mat-label>
+                    <mat-select>
+                        <!--
+                        <mat-option *ngFor="let sexo of sexo" [value]="sexo.value">
+                            {{sexo.viewValue}}
+                        </mat-option>-->
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-2">
+                <mat-form-field class="cpf-cad-cli col-md-10">
+                    <mat-label>CEP</mat-label>
+                    <input matInput #cep maxlength="8" placeholder="Ex: 19800-000">
+                    <mat-hint align="end">{{cep.value.length}} / 8</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="logradouro-cliente col-md-12">
+                    <mat-label>Logradouro</mat-label>
+                    <input matInput placeholder="Nome da rua/avenida/etc...">
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="numero-casa-cli col-md-6">
+                    <mat-label>Nº</mat-label>
+                    <input matInput type="number">
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="cpf-cad-cli col-md-6">
+                    <mat-label>Complemento</mat-label>
+                    <input matInput placeholder="Ex.: 3º Andar ou Ap15">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="bairro-cad-cli col-md-6">
+                    <mat-label>Bairro</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-2">
+                <mat-form-field class="cpf-cad-cli col-md-11">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput #fone maxlength="11" placeholder="(18) 99797 9797">
+                    <mat-hint align="end">Com DDD</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <div class="form-check col-md-12">
+                    <mat-radio-button class="example-margin" value="after">
+                        Confirmo que os dados são verdadeiros
+                    </mat-radio-button>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <mat-card-actions>
+                    <div class="card-action-buttons col-md-12">
+                        <button mat-raised-button type="submit" class="botao-salvar-cad-cli">
+                            SALVAR
+                        </button>
+                        <button mat-raised-button color="warn" type="reset">LIMPAR</button>
+                    </div>
+                </mat-card-actions>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+
+
+
 <p>cadastro-cliente works!</p>
 <p>cadastro-cliente works!</p>
 <p>cadastro-cliente works!</p>

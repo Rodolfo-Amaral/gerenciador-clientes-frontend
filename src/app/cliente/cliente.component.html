@@ -1,29 +1,28 @@
-<div>
-    <div class="main">
-        <!--CABEÇALHO-->
-        <mat-toolbar>
-            <span>
-                <a class="logo-name" routerLink="">
-                    <mat-icon>manage_accounts</mat-icon>Gerenciador de Clientes
-                </a>
-            </span>
-            <div class="espaco"></div>
-            <mat-icon class="botao-home" routerLink="">home</mat-icon>
-            <div class="links-cli-cid">
-                <button mat-button [matMenuTriggerFor]="aboveMenu">Clientes</button>
-                <mat-menu #aboveMenu="matMenu" yPosition="above">
-                    <button mat-menu-item routerLink="/cadastros/clientes">
-                        Cadastrar Cliente
-                    </button>
-                </mat-menu>
-
-                <button mat-button [matMenuTriggerFor]="belowMenu">Cidades</button>
-                <mat-menu #belowMenu="matMenu" yPosition="below">
-                    <button mat-menu-item>Cadastros</button>
-                </mat-menu>
-            </div>
-        </mat-toolbar>
-        <!--BODY
+<!--CABEÇALHO-->
+<div class="navbar navbar-static-top">
+    <mat-toolbar>
+        <span>
+            <a class="logo-name" routerLink="">
+                <mat-icon>manage_accounts</mat-icon>Gerenciador de Clientes
+            </a>
+        </span>
+        <div class="espaco"></div>
+        <mat-icon class="botao-home" routerLink="">home</mat-icon>
+        <div class="links-cli-cid">
+            <button mat-button [matMenuTriggerFor]="aboveMenu">Clientes</button>
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
+                <button mat-menu-item routerLink="/cadastros/clientes">
+                    Cadastrar Cliente
+                </button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="belowMenu">Cidades</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Cadastros</button>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
+</div>
+<!--BODY
         <div class="espaco-entre-navbar"></div>
         <mat-card class="card-header">
             <mat-card-header>
@@ -44,19 +43,17 @@
                 <button mat-raised-button color="warn">LIMPAR</button>
             </div>
         </mat-card-actions>-->
-    </div>
-    <p>buscar cliente</p>
-    <p>cliente component</p>
-    <p>buscar cliente</p>
-    <p>cliente component</p>
-    <p>buscar cliente</p>
-    <p>cliente component</p>
-    <p>buscar cliente</p>
-    <p>cliente component</p>
-    <p>buscar cliente</p>
-    <p>cliente component</p>
-    <p>buscar cliente</p>
-    <p>cliente component</p>
-    <p>buscar cliente</p>
-    <p>cliente component</p>
-</div>
+<p>buscar cliente</p>
+<p>cliente component</p>
+<p>buscar cliente</p>
+<p>cliente component</p>
+<p>buscar cliente</p>
+<p>cliente component</p>
+<p>buscar cliente</p>
+<p>cliente component</p>
+<p>buscar cliente</p>
+<p>cliente component</p>
+<p>buscar cliente</p>
+<p>cliente component</p>
+<p>buscar cliente</p>
+<p>cliente component</p>

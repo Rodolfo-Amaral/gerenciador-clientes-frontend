@@ -7,6 +7,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CadastroClienteComponent } from "./cadastro-cliente/cadastro-cliente.component";
 import { EditarClientesComponent } from "./editar-clientes/editar-clientes.component";
 import { ListarClientesComponent } from "./listar-clientes/listar-clientes.component";
+import { NgxMaskModule } from "ngx-mask";
 
 
 
@@ -17,7 +18,8 @@ import { ListarClientesComponent } from "./listar-clientes/listar-clientes.compo
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        InfiniteScrollModule
+        InfiniteScrollModule,
+        NgxMaskModule
     ]
 })
 export class ClienteModule { }

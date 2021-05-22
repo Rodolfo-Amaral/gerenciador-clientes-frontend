@@ -1,5 +1,5 @@
-<div>
-    <!--CABEÇALHO-->
+<!--CABEÇALHO-->
+<div class="navbar navbar-static-top">
     <mat-toolbar>
         <span>
             <a class="logo-name" routerLink="">
@@ -20,7 +20,6 @@
                     Buscar Clientes
                 </button>
             </mat-menu>
-
             <button mat-button [matMenuTriggerFor]="belowMenu">Cidades</button>
             <mat-menu #belowMenu="matMenu" yPosition="below">
                 <button mat-menu-item routerLink="cidades">
