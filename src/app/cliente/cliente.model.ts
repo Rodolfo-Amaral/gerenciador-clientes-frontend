@@ -1,10 +1,10 @@
+
 export interface Cliente {
     id: number;
     nome: string;
     cpfCnpj: string;
+    nascimento: Date;
     sexo: string;
-    cidade: string;
-    estado: string;
     logradouro: string;
     numero: number;
     bairro: string;
@@ -13,6 +13,7 @@ export interface Cliente {
     fone: string;
     email: string;
     estadoCivil: string;
-    dataCadastro: string;
+    dataCadastro: Date;
     status: string;
+    cidade: string;
 }

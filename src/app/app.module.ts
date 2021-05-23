@@ -18,6 +18,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
+
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,6 +40,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { CadastroCidadeComponent } from './cidades/cadastro-cidade/cadastro-cidade.component';
 import { BuscarCidadeComponent } from './cidades/buscar-cidade/buscar-cidade.component';
 import { EditarCidadeComponent } from './cidades/editar-cidade/editar-cidade.component';
+import { HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -55,6 +58,7 @@ import { EditarCidadeComponent } from './cidades/editar-cidade/editar-cidade.com
 
   ],
   imports: [
+    HttpClient,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -63,6 +67,7 @@ import { EditarCidadeComponent } from './cidades/editar-cidade/editar-cidade.com
     MatIconModule,
     MatFormFieldModule,
     MatCardModule,
+    MatTableModule,
     MatDatepickerModule,
     MatInputModule,
     MatMenuModule,

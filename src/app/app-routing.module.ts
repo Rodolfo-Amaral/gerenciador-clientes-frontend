@@ -19,8 +19,8 @@ const rotas: Routes = [
     { path: 'clientes/cadastrar', component: CadastroClienteComponent },
     { path: 'clientes/editar/:id', component: EditarClientesComponent },
     { path: 'cidades/cadastrar', component: CadastroCidadeComponent },
-    { path: 'cidades/editar/:id', component: EditarCidadeComponent },
-    { path: 'cidades/buscar', component: BuscarCidadeComponent },
+    { path: 'cidades/:id', component: EditarCidadeComponent },
+    { path: 'cidades/{nomeCidade}', component: BuscarCidadeComponent },
 
 ];
 
