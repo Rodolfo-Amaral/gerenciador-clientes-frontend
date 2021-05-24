@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Cliente } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { ClienteService } from '../cliente.service';
 export class CadastroClienteComponent implements OnInit {
 
   public id: number;
+  dados = this.clienteService.buscarTudo();
   cadCliente: FormGroup;
   public customPatterns = { '0': { pattern: new RegExp('\[0-9\]') } };
 
@@ -37,31 +39,29 @@ export class CadastroClienteComponent implements OnInit {
     })
   }
 
-  enviarDados() {
-    if (this.id) {
-      this.atualizar();
-    } else {
-      this.salvar();
-    }
+  enviarDados(): void {
+    this.salvar = this.dadosForm;
+    console.warn('Dados enviados', this.cadCliente.value);
+    this.cadCliente.reset();
   }
 
   dadosForm() {
     this.cadCliente = this.formBuilder.group({
       nome: ['', Validators.required],
       cpfCnpj: ['', Validators.required],
-      sexo: ['', Validators.required],
-      estadoCivil: ['', Validators.required],
-      email: ['', Validators.email],
-      nascimento: ['', Validators.required],
-      siglaEstado: ['', Validators.required],
-      nomeCidade: ['', Validators.required],
-      cep: ['', Validators.required],
-      logradouro: ['', Validators.required],
-      numero: ['', Validators.required],
-      complemento: ['', Validators.required],
-      bairro: ['', Validators.required],
-      telefone: ['', Validators.required],
-
+      sexo: '',
+      estadoCivil: '',
+      email: '',
+      nascimento: '',
+      siglaEstado: '',
+      nomeCidade: '',
+      cep: '',
+      logradouro: '',
+      numero: '',
+      complemento: '',
+      bairro: '',
+      telefone: '',
+      status: ['', Validators.required],
     })
   }
 

@@ -123,7 +123,7 @@
                     <mat-label>Cidade</mat-label>
                     <mat-select>
                         <!--
-                        <mat-option *ngFor="let nomeCidade of siglaEstado.cidades" [value]="nomeCidade.value">
+                        <mat-option *ngFor="let nomeCidade of siglaEstado.cidades">
                             {{nomeCidade.viewValue}}
                         </mat-option>-->
                         <mat-option value="Assis">
@@ -141,8 +141,9 @@
             <div class="col-md-2">
                 <mat-form-field class="cpf-cad-cli col-md-10">
                     <mat-label>CEP</mat-label>
-                    <input mask="P" matInput #cep maxlength="8" placeholder="Ex: 19800-000">
-                    <mat-hint align="end">{{cep.value.length}} / 8</mat-hint>
+                    <input [patterns]="customPatterns" mask="00000-000" matInput #cep maxlength="9"
+                        placeholder="Ex: 19800-000">
+                    <mat-hint align="end">{{cep.value.length}} / 9</mat-hint>
                 </mat-form-field>
             </div>
             <div class="col-md-6">
@@ -179,15 +180,16 @@
             </div>
             <div class="col-md-12">
                 <div class="form-check col-md-12">
-                    <mat-radio-button class="example-margin" value="after">
-                        Confirmo que os dados são verdadeiros
+                    <mat-radio-button class="example-margin" name="status">
+                        Cliente Ativo
                     </mat-radio-button>
                 </div>
             </div>
             <div class="col-md-12">
                 <mat-card-actions>
                     <div class="card-action-buttons col-md-12">
-                        <button mat-raised-button type="submit" class="botao-salvar-cad-cli">
+                        <button mat-raised-button type="submit" class="btn btn-primary">
+                            <!--<button mat-raised-button type="submit" class="btn btn-primary" [disabled]="cadCliente.invalid">-->
                             SALVAR
                         </button>
                         <button mat-raised-button color="warn" type="reset">LIMPAR</button>

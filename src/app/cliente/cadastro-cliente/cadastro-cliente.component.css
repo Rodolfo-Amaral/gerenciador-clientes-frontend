@@ -46,6 +46,6 @@
     background-image: url('https://cdn2.iconfinder.com/data/icons/user-interface-essentials-outline/48/ui-45-512.png');
     background-size: cover;
   }
-  .botao-salvar-cad-cli{
+  .btn, .btn-primary{
       background-color: #4dbd74;
   }

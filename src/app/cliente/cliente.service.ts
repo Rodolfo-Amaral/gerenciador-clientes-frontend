@@ -9,7 +9,8 @@ import { Cliente } from "./cliente.model";
 })
 
 export class ClienteService {
-    post: any;
+
+    cliente: Cliente[] = [];
 
     constructor(private http: HttpClient) {
     }

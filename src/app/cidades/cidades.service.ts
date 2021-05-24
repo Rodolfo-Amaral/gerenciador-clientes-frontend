@@ -26,11 +26,20 @@ export class CidadesService {
     return this.http.get<any[]>(this.apiUrl)
   }
 
-  buscarPorNome(nomeCidade: string) {
+  buscarPorNome(nomeCidade: string): Observable<any> {
     return this.http.get<Cidades>(`${this.apiUrl}/${nomeCidade}`)
   }
 
-  getSiglaEstado(siglaEstado: string): Observable<ResponsePageable> {
+  buscarSiglaEstado(siglaEstado: string): Observable<ResponsePageable> {
     return this.http.get<ResponsePageable>(this.buscaSiglaEstado + siglaEstado);
   }
+
+  cadastrarCidade(cidade: Cidades): Observable<Object> {
+    return this.http.post(`${this.apiUrl}`, cidade);
+  }
+
+  editarCidade(cidade: Cidades, id: number): Observable<any> {
+    return this.http.put(`${this.http}/${id}`, cidade);
+  }
+
 }

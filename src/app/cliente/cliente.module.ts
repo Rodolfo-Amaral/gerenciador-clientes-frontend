@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { AppRoutingModule } from "../app-routing.module";
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
@@ -19,7 +19,8 @@ import { NgxMaskModule } from "ngx-mask";
         FormsModule,
         ReactiveFormsModule,
         InfiniteScrollModule,
-        NgxMaskModule
+        NgxMaskModule,
+        Validators
     ]
 })
 export class ClienteModule { }
