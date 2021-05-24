@@ -29,8 +29,8 @@ export class ClienteService {
         return this.http.get<Cliente>(`${this.listarClienteUrl}/${cpfCnpj}`);
     }
 
-    buscarTudo(): Observable<Cliente[]> {
-        return this.http.get<Cliente[]>(this.listarClienteUrl);
+    buscarTudo(): Observable<any[]> {
+        return this.http.get<any[]>(this.listarClienteUrl);
     }
 
     cadastrarCliente(cliente: Cliente): Observable<Object> {

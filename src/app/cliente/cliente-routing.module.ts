@@ -6,7 +6,7 @@ import { ListarClientesComponent } from './listar-clientes/listar-clientes.compo
 
 const rotas: Routes = [
     { path: 'clientes/listar', component: ListarClientesComponent },
-    { path: 'clientes/listar/:cpfCnpj', component: ListarClientesComponent },
+    /*{ path: 'clientes/listar/:cpfCnpj', component: ListarClientesComponent },*/
     { path: 'clientes/cadastrar', component: CadastroClienteComponent },
     { path: 'clientes/editar/:id', component: EditarClientesComponent },
 ];

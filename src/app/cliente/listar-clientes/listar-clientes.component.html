@@ -18,54 +18,55 @@
             <a mat-button routerLink="/cidades">Cidades</a>
         </div>
     </mat-toolbar>
-</div>
+</div>-->
 <div fxLayout="column" fxLayoutAlign="start start" style="padding-left: 2%; padding-right: 2%; padding-top: 2%;">
     <mat-card>
         <mat-card-title>
             <mat-icon aria-hidden="false" aria-label="list-icon">reorder</mat-icon>
             Listagem de Clientes
         </mat-card-title>
+        <!--<table mat-table ngFor="let clientes of cliente" class="mat-elevation-z8">-->
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
                 <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+                <mat-cell *matCellDef="let clientes"> {{ cliente.id }} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="nome">
                 <mat-header-cell *matHeaderCellDef> Nome/Razão Social </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.nome }} </mat-cell>
+                <mat-cell *matCellDef="let clientes"> {{ cliente.nome }} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="cpfCnpj">
                 <mat-header-cell *matHeaderCellDef> CPF/CNPJ </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.cpfCnpj }} </mat-cell>
+                <mat-cell *matCellDef="let clientes"> {{ cliente.cpfCnpj }} </mat-cell>
             </ng-container>
 
 
             <ng-container matColumnDef="nascimento">
                 <mat-header-cell *matHeaderCellDef> Data de Nascimento </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.nascimento }} </mat-cell>
+                <mat-cell *matCellDef="let clientes"> {{ cliente.nascimento }} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="email">
                 <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.email }} </mat-cell>
+                <mat-cell *matCellDef="let clientes"> {{ cliente.email }} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="logradouro">
                 <mat-header-cell *matHeaderCellDef> Endereço </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.logradouro }} </mat-cell>
+                <mat-cell *matCellDef="let clientes"> {{ cliente.logradouro }} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="numero">
                 <mat-header-cell *matHeaderCellDef> Número </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.numero }} </mat-cell>
+                <mat-cell *matCellDef="let clientes"> {{ cliente.numero }} </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+            <mat-row *matRowDef="let cliente; columns: columns;"></mat-row>
         </table>
     </mat-card>
-</div>-->
+</div>
 <p> ROTA OK </p>
