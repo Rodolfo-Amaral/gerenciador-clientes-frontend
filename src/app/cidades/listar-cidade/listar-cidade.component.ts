@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
 import { Cidades } from '../cidades.model';
 import { CidadesService } from '../cidades.service';
 
@@ -10,19 +9,19 @@ import { CidadesService } from '../cidades.service';
 })
 export class ListarCidadeComponent implements OnInit {
 
-  nomeCidade: Cidades[] = [];
+  cidade: Cidades[] = [];
 
   constructor(public cidadeService: CidadesService) { }
 
   ngOnInit(): void {
-    this.buscarPorNome();
+    /* this.buscarPorNome(); */
   }
 
-  buscarPorNome() {
-    this.cidadeService.buscarPorNome().subscribe(data => {
-      this.nomeCidade = data;
-      console.log(this.nomeCidade);
-    });
-  }
+  /*  buscarPorNome() {
+      this.cidadeService.buscarPorNome().subscribe(response => {
+        this.cidade = this.cidade.concat(response['conteudo']);
+        console.log(this.cidade);
+      });
+    }*/
 
 }
