@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cliente } from '../cliente.model';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-editar-clientes',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar-clientes.component.css']
 })
 export class EditarClientesComponent implements OnInit {
+  clientes: Cliente[];
 
-  constructor() { }
+  constructor(private clienteService: ClienteService,
+    private routes: Router) { }
 
   ngOnInit(): void {
+    this.getClientes();
+  }
+
+  private getClientes() {
+    this.clienteService.buscarTudo().subscribe(data => {
+      this.clientes = data;
+    })
   }
 
 }

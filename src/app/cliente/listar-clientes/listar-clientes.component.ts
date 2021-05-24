@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cliente } from '../cliente.model';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-listar-clientes',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarClientesComponent implements OnInit {
 
-  constructor() { }
+  clientes: Cliente[];
+
+  constructor(public clienteService: ClienteService,
+    private routes: Router) { }
 
   ngOnInit(): void {
+    /* this.buscaCpfCnpj();*/
   }
+
+  /*buscaCpfCnpj() {
+    this.clienteService.buscaCpfCnpj().subscribe(data => {
+      this.clientes = data;
+    });
+  }*/
+
 
 }

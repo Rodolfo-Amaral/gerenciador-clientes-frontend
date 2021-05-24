@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { Cliente } from "./cliente.model";
 
 
@@ -8,11 +9,13 @@ import { Cliente } from "./cliente.model";
 })
 
 export class ClienteService {
+    post: any;
 
     constructor(private http: HttpClient) {
     }
 
-    clienteUrl = 'http://localhost:8080/clientes'
+    private clienteUrl = 'http://localhost:8080/clientes'
+    private cadastroUrl = 'http://localhost:8080/clientes/cadastrar'
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -21,7 +24,20 @@ export class ClienteService {
         })
     };
 
-    buscaCpfCnpj(cpfCnpj: string) {
+    buscaCpfCnpj(cpfCnpj: string): Observable<Cliente> {
         return this.http.get<Cliente>(`${this.clienteUrl}/${cpfCnpj}`);
     }
+
+    buscarTudo() {
+        return this.http.get<Cliente[]>(this.clienteUrl);
+    }
+
+    cadastrarCliente(cliente: Cliente): Observable<Object> {
+        return this.http.post(`${this.clienteUrl}`, cliente);
+    }
+
+    atualizarCliente(cliente: Cliente, id: number): Observable<Object> {
+        return this.http.put(`${this.cadastroUrl}/${id}`, cliente);
+    }
+
 }
