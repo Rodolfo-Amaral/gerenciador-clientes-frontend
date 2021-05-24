@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { Cidades } from 'src/app/cidades/cidades.model';
 import { Cliente } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
 
@@ -11,13 +12,15 @@ import { ClienteService } from '../cliente.service';
 })
 export class ListarClientesComponent implements OnInit {
 
-  clientes: Cliente[] = [];
+  public cliente = new Cliente();
+  public clientes: Cliente[] = [];
+  cidade: Cidades[] = [];
   dataSource: MatTableDataSource<Cliente>;
   columns: string[] = ['id', 'nome', 'cpfCnpj', 'nascimento', 'email', 'logradouro', 'numero'];
 
   constructor(public clienteService: ClienteService,
     private routes: Router) {
-    this.clientes = [{
+    /*this.clientes = [{
       id: 1,
       nome: 'Rodolfo Amaral',
       cpfCnpj: '10000000000',
@@ -53,18 +56,27 @@ export class ListarClientesComponent implements OnInit {
       dataCadastro: 'string',
       status: 'string',
     }];
-    this.dataSource = new MatTableDataSource(this.clientes);
+    this.dataSource = new MatTableDataSource(this.clientes);*/
   }
 
   ngOnInit(): void {
-    /* this.buscaCpfCnpj();*/
+    this.buscaCpfCnpj();
   }
 
-  /*buscaCpfCnpj() {
-    this.clienteService.buscaCpfCnpj().subscribe(data => {
-      this.clientes = data;
+  buscarTudo() {
+    this.clienteService.buscarTudo()
+      .subscribe(cliente => {
+        this.clientes = cliente;
+        console.log(this.cliente);
+      });
+  }
+
+  buscaCpfCnpj() {
+    this.clienteService.buscaCpfCnpj('cpfCnpj').subscribe(data => {
+      this.cliente = data;
+      console.log(this.clientes);
     });
-  }*/
+  }
 
 
 }

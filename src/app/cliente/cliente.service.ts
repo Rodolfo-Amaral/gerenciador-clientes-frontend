@@ -15,7 +15,7 @@ export class ClienteService {
     constructor(private http: HttpClient) {
     }
 
-    private clienteUrl = 'http://localhost:8080/clientes'
+    private listarClienteUrl = 'http://localhost:8080/clientes/listar'
     private cadastroUrl = 'http://localhost:8080/clientes/cadastrar'
 
     httpOptions = {
@@ -26,15 +26,15 @@ export class ClienteService {
     };
 
     buscaCpfCnpj(cpfCnpj: string): Observable<Cliente> {
-        return this.http.get<Cliente>(`${this.clienteUrl}/${cpfCnpj}`);
+        return this.http.get<Cliente>(`${this.listarClienteUrl}/${cpfCnpj}`);
     }
 
-    buscarTudo() {
-        return this.http.get<Cliente[]>(this.clienteUrl);
+    buscarTudo(): Observable<Cliente[]> {
+        return this.http.get<Cliente[]>(this.listarClienteUrl);
     }
 
     cadastrarCliente(cliente: Cliente): Observable<Object> {
-        return this.http.post(`${this.clienteUrl}`, cliente);
+        return this.http.post(`${this.cadastroUrl}`, cliente);
     }
 
     atualizarCliente(cliente: Cliente, id: number): Observable<Object> {
@@ -42,7 +42,7 @@ export class ClienteService {
     }
 
     salvar(cliente: any): Observable<any> {
-        return this.http.post<any>(this.clienteUrl, cliente, this.httpOptions)
+        return this.http.post<any>(this.cadastroUrl, cliente, this.httpOptions)
             .pipe()
     }
 
