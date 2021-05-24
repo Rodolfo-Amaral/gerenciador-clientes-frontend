@@ -41,4 +41,9 @@ export class ClienteService {
         return this.http.put(`${this.cadastroUrl}/${id}`, cliente);
     }
 
+    salvar(cliente: any): Observable<any> {
+        return this.http.post<any>(this.clienteUrl, cliente, this.httpOptions)
+            .pipe()
+    }
+
 }

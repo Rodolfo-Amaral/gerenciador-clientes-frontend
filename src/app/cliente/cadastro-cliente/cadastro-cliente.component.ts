@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Cidades } from 'src/app/cidades/cidades.model';
 import { Cliente } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
 
@@ -10,8 +11,12 @@ import { ClienteService } from '../cliente.service';
   styleUrls: ['./cadastro-cliente.component.css']
 })
 export class CadastroClienteComponent implements OnInit {
+  title = 'Cadastro de Clientes';
 
   public id: number;
+  cliente = new Cliente();
+  nomeCidade: Cidades[];
+  clientes: Cliente[];
   dados = this.clienteService.buscarTudo();
   cadCliente: FormGroup;
   public customPatterns = { '0': { pattern: new RegExp('\[0-9\]') } };
@@ -25,11 +30,26 @@ export class CadastroClienteComponent implements OnInit {
     this.dadosForm();
   }
 
-  salvar() {
-    this.clienteService.cadastrarCliente(this.cadCliente.value).subscribe(data => {
-      console.log(data);
-      this.listaCli();
-    })
+  buscarTudo() {
+    this.clienteService.buscarTudo()
+      .subscribe(cliente => {
+        this.clientes = cliente;
+      });
+  }
+
+  enviarDados(): void {
+    this.salvarCliente = this.dadosForm;
+    console.warn('Dados enviados', this.dadosForm);
+    this.cadCliente.reset();
+  }
+
+  salvarCliente(cadCliente: NgForm) {
+    console.log(cadCliente.value);
+    console.log(this.cliente);
+    this.clienteService.salvar(this.cliente)
+      .subscribe(cliente => this.nomeCidade.push(cliente));
+    cadCliente.reset();
+    this.cliente = new Cliente();
   }
 
   atualizar() {
@@ -39,11 +59,6 @@ export class CadastroClienteComponent implements OnInit {
     })
   }
 
-  enviarDados(): void {
-    this.salvar = this.dadosForm;
-    console.warn('Dados enviados', this.cadCliente.value);
-    this.cadCliente.reset();
-  }
 
   dadosForm() {
     this.cadCliente = this.formBuilder.group({
@@ -60,7 +75,7 @@ export class CadastroClienteComponent implements OnInit {
       numero: '',
       complemento: '',
       bairro: '',
-      telefone: '',
+      fone: '',
       status: ['', Validators.required],
     })
   }

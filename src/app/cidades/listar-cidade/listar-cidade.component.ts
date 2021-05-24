@@ -14,14 +14,14 @@ export class ListarCidadeComponent implements OnInit {
   constructor(public cidadeService: CidadesService) { }
 
   ngOnInit(): void {
-    /* this.buscarPorNome(); */
+    /*this.buscarPorNome(); */
   }
 
-  /*  buscarPorNome() {
-      this.cidadeService.buscarPorNome().subscribe(response => {
-        this.cidade = this.cidade.concat(response['conteudo']);
-        console.log(this.cidade);
-      });
-    }*/
+  /*buscarPorNome() {
+     this.cidadeService.buscarPorNome().subscribe(response => {
+       this.cidade = this.cidade.concat(response['conteudo']);
+       console.log(this.cidade);
+     });
+   }*/
 
 }

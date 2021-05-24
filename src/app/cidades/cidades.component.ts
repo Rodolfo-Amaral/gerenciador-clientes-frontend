@@ -28,10 +28,10 @@ export class CidadesComponent implements OnInit {
     this.routes.navigate(['${id}', id]);
   }
 
-  /*private findByNomeCidade() {
-  this.cidadeService.buscarPorNome().subscribe(data => {
-    this.cidadeService = data;
-  })
-}*/
+  private buscarPorNome(nomeCidade: string) {
+    this.cidadeService.buscarPorNome(nomeCidade).subscribe(data => {
+      this.cidadeService = data;
+    })
+  }
 
 }

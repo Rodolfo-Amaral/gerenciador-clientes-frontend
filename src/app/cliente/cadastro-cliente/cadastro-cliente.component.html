@@ -20,7 +20,7 @@
     </mat-toolbar>
 </div>
 
-<!--Cadastro-->
+<!--Formulario de Cadastro-->
 <div style="padding-top: 40px;"></div>
 <mat-card class="card-cadastro-cli card text-left container-fluid">
     <mat-card-header>
@@ -36,11 +36,7 @@
             <div class="col-md-6">
                 <mat-form-field class="nome-completo col-md-12">
                     <mat-label>Nome/Razão Social</mat-label>
-                    <input matInput formControlName="nome">
-                    <small class="text-danger"
-                        *ngIf="cadCliente.controls['nome'].invalid && (cadCliente.controls['nome'].dirty || cadCliente.controls['nome'].touched)">
-                        Nome/Razão Social é obrigatório!
-                    </small>
+                    <input formControlName="nome" matInput #nome>
                 </mat-form-field>
             </div>
             <div class="col-md-6 form-group">
@@ -52,7 +48,8 @@
             <div class="col-md-3">
                 <mat-form-field class="cpf-cad-cli col-md-11">
                     <mat-label>CPF</mat-label>
-                    <input mask="CPF_CNPJ" matInput #cpf maxlength="18" placeholder="(OBRIGATÓRIO)">
+                    <input formControlName="cpfCnpj" mask="CPF_CNPJ" matInput #cpf maxlength="18"
+                        placeholder="(OBRIGATÓRIO)">
                     <!--<small class="text-danger"
                         *ngIf="cadCliente.controls['cpfCnpj'].invalid && (cadCliente.controls['cpfCnpj'].dirty || cadCliente.controls['cpfCnpj'].touched)">
                         CPF/CNPJ é obrigatório!
@@ -69,6 +66,7 @@
                         <mat-option value="Feminino">
                             Feminino
                         </mat-option>
+                        <input formControlName="cpfCnpj" matInput #sexo>
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -81,19 +79,20 @@
                         <mat-option value="separado(a)">Separado(a)</mat-option>
                         <mat-option value="divorciado(a)">Divorciado(a)</mat-option>
                         <mat-option value="viuvo(a)">Viúvo(a)</mat-option>
+                        <input formControlName="estadoCivil" matInput #estadoCivil>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="col-md-6">
-                <mat-form-field class="logradouro-cliente col-md-12">
+                <mat-form-field class="email-cliente col-md-12">
                     <mat-label>E-mail</mat-label>
-                    <input matInput>
+                    <input formControlName="email" matInput #email>
                 </mat-form-field>
             </div>
             <div class="col-md-6">
                 <mat-form-field class="col-md-6">
                     <mat-label>Data de Nascimento</mat-label>
-                    <input matInput [matDatepicker]="datePicker" fromControlName="dataDeNascimento" name="nascimento">
+                    <input matInput [matDatepicker]="datePicker" fromControlName="nascimento" name="nascimento">
                     <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
                     <mat-datepicker #datePicker></mat-datepicker>
                 </mat-form-field>
@@ -115,11 +114,12 @@
                         <mat-option value="RJ">
                             RJ
                         </mat-option>
+                        <input formControlName="nomeCidade" matInput #siglaEstado>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="col-md-3">
-                <mat-form-field class="estado-cad-cli col-md-12">
+                <mat-form-field class="cidade-cad-cli col-md-12">
                     <mat-label>Cidade</mat-label>
                     <mat-select>
                         <!--
@@ -135,60 +135,62 @@
                         <mat-option value="Rio de Janeiro">
                             Rio de Janeiro
                         </mat-option>
+                        <input formControlName="nomeCidade" matInput #nomeCidade>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="col-md-2">
                 <mat-form-field class="cpf-cad-cli col-md-10">
                     <mat-label>CEP</mat-label>
-                    <input [patterns]="customPatterns" mask="00000-000" matInput #cep maxlength="9"
-                        placeholder="Ex: 19800-000">
+                    <input formControlName="cep" [patterns]="customPatterns" mask="00000-000" matInput #cep
+                        maxlength="9" placeholder="Ex: 19800-000">
                     <mat-hint align="end">{{cep.value.length}} / 9</mat-hint>
                 </mat-form-field>
             </div>
             <div class="col-md-6">
                 <mat-form-field class="logradouro-cliente col-md-12">
                     <mat-label>Logradouro</mat-label>
-                    <input matInput placeholder="Nome da rua/avenida/etc...">
+                    <input formControlName="logradouro" matInput #logradouro placeholder="Nome da rua/avenida/etc...">
                 </mat-form-field>
             </div>
             <div class="col-md-3">
                 <mat-form-field class="numero-casa-cli col-md-6">
                     <mat-label>Nº</mat-label>
-                    <input matInput type="number">
+                    <input formControlName="numero" matInput #numero type="number">
                 </mat-form-field>
             </div>
             <div class="col-md-3">
                 <mat-form-field class="cpf-cad-cli col-md-6">
                     <mat-label>Complemento</mat-label>
-                    <input matInput placeholder="Ex.: 3º Andar ou Ap15">
+                    <input formControlName="complemento" matInput #complemento placeholder="Ex.: 3º Andar ou Ap15">
                 </mat-form-field>
             </div>
             <div class="col-md-6">
                 <mat-form-field class="bairro-cad-cli col-md-6">
                     <mat-label>Bairro</mat-label>
-                    <input matInput>
+                    <input formControlName="bairro" matInput #bairro>
                 </mat-form-field>
             </div>
             <div class="col-md-3">
                 <mat-form-field class="cpf-cad-cli col-md-11">
                     <mat-label>Telefone</mat-label>
-                    <input [patterns]="customPatterns" mask="(00) 00000-0000" matInput #fone maxlength="15"
-                        placeholder="(18) 99797 9797">
+                    <input formControlName="fone" [patterns]="customPatterns" mask="(00) 00000-0000" matInput #fone
+                        maxlength="15" placeholder="(18) 99797 9797">
                     <mat-hint align="end">Com DDD</mat-hint>
                 </mat-form-field>
             </div>
             <div class="col-md-12">
                 <div class="form-check col-md-12">
                     <mat-radio-button class="example-margin" name="status">
-                        Cliente Ativo
+                        Ativo
                     </mat-radio-button>
+                    <input formControlName="status" matInput #status>
                 </div>
             </div>
             <div class="col-md-12">
                 <mat-card-actions>
                     <div class="card-action-buttons col-md-12">
-                        <button mat-raised-button type="submit" class="btn btn-primary">
+                        <button mat-raised-button type="submit" class="btn">
                             <!--<button mat-raised-button type="submit" class="btn btn-primary" [disabled]="cadCliente.invalid">-->
                             SALVAR
                         </button>
