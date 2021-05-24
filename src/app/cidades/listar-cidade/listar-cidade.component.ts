@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Cidades } from '../cidades.model';
 import { CidadesService } from '../cidades.service';
 
@@ -9,19 +10,21 @@ import { CidadesService } from '../cidades.service';
 })
 export class ListarCidadeComponent implements OnInit {
 
-  cidade: Cidades[] = [];
+  constructor(public cidadeService: CidadesService, private routes: ActivatedRoute) { }
+  cidade = new Cidades();
+  cidades: Cidades[] = [];
 
-  constructor(public cidadeService: CidadesService) { }
 
   ngOnInit(): void {
-    /*this.buscarPorNome(); */
+    const nomeCidade = this.routes.snapshot.params.id;
+    this.buscarPorNome(nomeCidade);
+
   }
 
-  /*buscarPorNome() {
-     this.cidadeService.buscarPorNome().subscribe(response => {
-       this.cidade = this.cidade.concat(response['conteudo']);
-       console.log(this.cidade);
-     });
-   }*/
-
+  buscarPorNome(nomeCidade: string) {
+    this.cidadeService.buscarPorNome(nomeCidade).subscribe(cidade => {
+      this.cidades = cidade;
+    })
+  }
 }
+

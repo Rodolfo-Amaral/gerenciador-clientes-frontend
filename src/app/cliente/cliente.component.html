@@ -38,7 +38,7 @@
 
                 <mat-form-field class="container col-md-3">
                     <mat-label>CPF/CNPJ</mat-label>
-                    <input matInput #cpf maxlength="14">
+                    <input matInput [(ngModel)]="cliente.cpfCnpj" #cpf maxlength="14">
                 </mat-form-field>
             </mat-expansion-panel>
             <mat-card-actions>
@@ -52,4 +52,3 @@
         </mat-accordion>
     </mat-card>
 </div>
-<app-listar-clientes></app-listar-clientes>

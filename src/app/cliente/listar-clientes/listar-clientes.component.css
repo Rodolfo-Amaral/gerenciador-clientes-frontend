@@ -31,3 +31,7 @@
     display: flex;
     align-items: center;
 }
+
+.mat-elevation-z8, .mat-card{
+    width: 100%;
+}

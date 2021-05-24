@@ -40,6 +40,8 @@ import { CadastroCidadeComponent } from './cidades/cadastro-cidade/cadastro-cida
 import { EditarCidadeComponent } from './cidades/editar-cidade/editar-cidade.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule } from 'ngx-mask';
+import { ClienteRoutingModule } from './cliente/cliente-routing.module';
+import { CidadeRoutingModule } from './cidades/cidade-routing.module';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import { NgxMaskModule } from 'ngx-mask';
   imports: [
     HttpClientModule,
     AppRoutingModule,
+    ClienteRoutingModule,
+    CidadeRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,

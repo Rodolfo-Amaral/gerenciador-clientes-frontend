@@ -20,6 +20,7 @@ export class EditarClientesComponent implements OnInit {
 
   private getClientes() {
     this.clienteService.buscarTudo().subscribe(data => {
+      console.log(data);
       this.clientes = data;
     })
   }

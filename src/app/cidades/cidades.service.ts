@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ResponsePageable } from '../responsePageable';
@@ -26,8 +26,10 @@ export class CidadesService {
     return this.http.get<any[]>(this.apiUrl)
   }
 
-  buscarPorNome(nomeCidade: string): Observable<any> {
-    return this.http.get<Cidades>(`${this.apiUrl}/${nomeCidade}`)
+  buscarPorNome(nomeCidade: string) {
+    const options = nomeCidade ?
+      { params: new HttpParams().set('cidades', nomeCidade) } : {};
+    return this.http.get<any[]>(`${this.homeUrl}/cidades`, options)
   }
 
   buscarSiglaEstado(siglaEstado: string): Observable<ResponsePageable> {

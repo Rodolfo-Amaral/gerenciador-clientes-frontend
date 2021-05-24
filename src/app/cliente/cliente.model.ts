@@ -2,7 +2,7 @@ export class Cliente {
     id: number;
     nome: string;
     cpfCnpj: string;
-    nascimento: Date;
+    nascimento: string;
     sexo: string;
     logradouro: string;
     numero: number;
@@ -12,7 +12,7 @@ export class Cliente {
     fone: string;
     email: string;
     estadoCivil: string;
-    dataCadastro: Date;
+    dataCadastro: string;
     status: string;
     cidade: string;
 }
