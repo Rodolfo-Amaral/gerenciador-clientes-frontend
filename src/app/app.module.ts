@@ -38,9 +38,8 @@ import { ListarClientesComponent } from './cliente/listar-clientes/listar-client
 import { HomeComponent } from './home/home.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CadastroCidadeComponent } from './cidades/cadastro-cidade/cadastro-cidade.component';
-import { BuscarCidadeComponent } from './cidades/buscar-cidade/buscar-cidade.component';
 import { EditarCidadeComponent } from './cidades/editar-cidade/editar-cidade.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -53,14 +52,14 @@ import { HttpClient } from '@angular/common/http';
     CadastroClienteComponent,
     EditarClientesComponent,
     CadastroCidadeComponent,
-    BuscarCidadeComponent,
     EditarCidadeComponent
 
   ],
   imports: [
     HttpClient,
-    BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
