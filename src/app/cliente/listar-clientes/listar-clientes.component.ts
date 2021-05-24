@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
 import { Cidades } from 'src/app/cidades/cidades.model';
 import { Cliente } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
@@ -22,8 +21,7 @@ export class ListarClientesComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(public clienteService: ClienteService,
-    private routes: Router) {
+  constructor(public clienteService: ClienteService) {
     /*this.clientes = [{
       id: 1,
       nome: 'Rodolfo Amaral',
@@ -75,11 +73,10 @@ export class ListarClientesComponent implements OnInit {
   }
 
   buscarTudo() {
-    this.clienteService.buscarTudo()
-      .subscribe(cliente => {
-        this.clientes = cliente;
-        console.log(this.clientes);
-      });
+    this.clienteService.buscarTudo().subscribe(cliente => {
+      this.clientes = cliente;
+      console.log(this.clientes);
+    });
   }
 
   buscaCpfCnpj() {

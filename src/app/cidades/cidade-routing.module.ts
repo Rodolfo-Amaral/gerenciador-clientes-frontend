@@ -6,12 +6,12 @@ import { EditarCidadeComponent } from './editar-cidade/editar-cidade.component';
 import { ListarCidadeComponent } from './listar-cidade/listar-cidade.component';
 
 const rotas: Routes = [
+
+    { path: 'cidades/listar', component: CidadesComponent },
     { path: 'cidades/:nomeCidade', component: ListarCidadeComponent },
-    { path: 'cidades', component: ListarCidadeComponent },
-    { path: 'cidades/:nomeCidade', component: CidadesComponent },
-    { path: 'cidades/estados/:siglaEstado', component: ListarCidadeComponent },
+    /*  { path: 'cidades/estados/:siglaEstado', component: ListarCidadeComponent },*/
     { path: 'cidades/cadastrar', component: CadastroCidadeComponent },
-    { path: 'cidades/:id', component: EditarCidadeComponent },
+    { path: 'cidades/editar/:id', component: EditarCidadeComponent },
 
 ];
 

@@ -25,32 +25,34 @@
             <mat-icon aria-hidden="false" aria-label="list-icon">reorder</mat-icon>
             Listagem de Cidades
         </mat-card-title>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <table mat-table ngFor="let cidades of cliente" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+                <mat-cell *matCellDef="let cidades"> {{ cidades.id }} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="nomeCidade">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Nome/Razão Social </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.nome }} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> Cidade </mat-header-cell>
+                <mat-cell *matCellDef="let cidades"> {{ cidades.nomeCidade }} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="nomeEstado">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> CPF/CNPJ </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.cpfCnpj }} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+                <mat-cell *matCellDef="let cidades"> {{ cidades.nomeEstado }} </mat-cell>
             </ng-container>
 
 
             <ng-container matColumnDef="siglaEstado">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Data de Nascimento </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.nascimento }} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> UF </mat-header-cell>
+                <mat-cell *matCellDef="let cidades"> {{ cidades.siglaEstado }} </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+            <mat-row *matRowDef="let cidades; columns: columns;"></mat-row>
         </table>
     </mat-card>
 </div>-->
+<p> ROTA OK </p>
 <p> ROTA OK </p>

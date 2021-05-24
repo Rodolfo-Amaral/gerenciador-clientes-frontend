@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ResponsePageable } from '../responsePageable';
 import { Cidades } from './cidades.model';
 
 @Injectable({
@@ -11,7 +10,8 @@ export class CidadesService {
   constructor(private http: HttpClient) { }
 
   [x: string]: any;
-  apiUrl = 'http://localhost:8080/cidades'
+
+  cidadesUrl = 'http://localhost:8080/cidades'
 
   buscaSiglaEstado = 'http://localhost:8080/cidades/estados'
 
@@ -23,21 +23,21 @@ export class CidadesService {
   };
 
   buscarCidades() {
-    return this.http.get<any[]>(this.apiUrl)
+    return this.http.get<any[]>(`${this.cidadesUrl}/listar`)
   }
 
-  buscarPorNome(nomeCidade: string) {
+  buscarPorNome(nomeCidade: string): Observable<any> {
     const options = nomeCidade ?
-      { params: new HttpParams().set('cidades', nomeCidade) } : {};
-    return this.http.get<any[]>(`${this.homeUrl}/cidades`, options)
+      { params: new HttpParams().set('nomeCidade', nomeCidade) } : {};
+    return this.http.get<any[]>(`${this.cidadesUrl}/nomeCidade`, options)
   }
 
-  buscarSiglaEstado(siglaEstado: string): Observable<ResponsePageable> {
-    return this.http.get<ResponsePageable>(this.buscaSiglaEstado + siglaEstado);
+  buscarSiglaEstado(siglaEstado: string): Observable<any> {
+    return this.http.get<any[]>(`${this.buscaSiglaEstado}/${siglaEstado}`);
   }
 
   cadastrarCidade(cidade: Cidades): Observable<Object> {
-    return this.http.post(`${this.apiUrl}`, cidade);
+    return this.http.post(`${this.cidadesUrl}`, cidade);
   }
 
   editarCidade(cidade: Cidades, id: number): Observable<any> {

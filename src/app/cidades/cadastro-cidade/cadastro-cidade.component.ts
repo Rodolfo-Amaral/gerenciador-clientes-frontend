@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Cidades } from '../cidades.model';
 import { CidadesService } from '../cidades.service';
 
 @Component({
@@ -11,6 +12,8 @@ import { CidadesService } from '../cidades.service';
 export class CadastroCidadeComponent implements OnInit {
   id: number;
   formCidade: FormGroup;
+  public cidade = new Cidades();
+  public cidades: Cidades[] = [];
 
   constructor(private cidadeService: CidadesService,
     private routes: ActivatedRoute, private formBuilder: FormBuilder,

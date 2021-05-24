@@ -46,8 +46,8 @@
                 <mat-form-field class="sexo-cad-cli col-md-12">
                     <mat-label>Estado</mat-label>
                     <mat-select>
-                        <!--<mat-option *ngFor="let siglaEstado of Cidades" [value]="Cidades.siglaEstado">
-                            {{Cidades.viewValue}}
+                        <!--<mat-option *ngFor="let siglaEstado of cidades" [value]="cidades.siglaEstado">
+                            {{cidades.viewValue}}
                         </mat-option>-->
                     </mat-select>
                 </mat-form-field>
@@ -55,7 +55,7 @@
             <div class="col-md-12">
                 <mat-card-actions>
                     <div class="card-action-buttons col-md-12">
-                        <button mat-raised-button type="submit" class="botao-salvar-cad-cli">
+                        <button mat-raised-button type="submit" (click)="salvar" class="botao-salvar-cad-cli">
                             SALVAR
                         </button>
                         <button mat-raised-button color="warn" type="reset">LIMPAR</button>

@@ -24,6 +24,7 @@ export class CidadesComponent implements OnInit {
   private findAll() {
     this.cidadeService.buscarCidades().subscribe(data => {
       this.cidades = data;
+      console.log(data)
     })
   }
 
@@ -35,6 +36,7 @@ export class CidadesComponent implements OnInit {
     this.cidadeService.buscarPorNome(nomeCidade)
       .subscribe(cidade => {
         this.cidades = cidade;
+        console.log(cidade)
       })
   }
 }
