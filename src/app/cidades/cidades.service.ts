@@ -13,9 +13,7 @@ export class CidadesService {
   [x: string]: any;
   apiUrl = 'http://localhost:8080/cidades'
 
-  buscaNomeUrl = 'http://localhost:8080/cidades/'
-
-  buscaSiglaEstado = 'http://localhost:8080/cidades/estados/'
+  buscaSiglaEstado = 'http://localhost:8080/cidades/estados'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -29,7 +27,7 @@ export class CidadesService {
   }
 
   buscarPorNome(nomeCidade: string) {
-    return this.http.get<Cidades>(`${this.buscaNomeUrl}/${nomeCidade}`)
+    return this.http.get<Cidades>(`${this.apiUrl}/${nomeCidade}`)
   }
 
   getSiglaEstado(siglaEstado: string): Observable<ResponsePageable> {

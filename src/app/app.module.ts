@@ -39,7 +39,7 @@ import { HomeComponent } from './home/home.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CadastroCidadeComponent } from './cidades/cadastro-cidade/cadastro-cidade.component';
 import { EditarCidadeComponent } from './cidades/editar-cidade/editar-cidade.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -56,7 +56,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
   ],
   imports: [
-    HttpClient,
     HttpClientModule,
     AppRoutingModule,
     BrowserModule,
