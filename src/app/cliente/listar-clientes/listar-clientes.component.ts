@@ -10,7 +10,7 @@ import { ClienteService } from '../cliente.service';
 })
 export class ListarClientesComponent implements OnInit {
 
-  clientes: Cliente[];
+  clientes: Cliente[] = [];
 
   constructor(public clienteService: ClienteService,
     private routes: Router) { }

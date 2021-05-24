@@ -9,7 +9,7 @@ import { ClienteService } from '../cliente.service';
   styleUrls: ['./editar-clientes.component.css']
 })
 export class EditarClientesComponent implements OnInit {
-  clientes: Cliente[];
+  clientes: Cliente[] = [];
 
   constructor(private clienteService: ClienteService,
     private routes: Router) { }
@@ -22,6 +22,9 @@ export class EditarClientesComponent implements OnInit {
     this.clienteService.buscarTudo().subscribe(data => {
       this.clientes = data;
     })
+  }
+  editarCliente(id: number) {
+    this.routes.navigate(['editar', id]);
   }
 
 }

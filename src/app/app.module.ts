@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatDatepickerModule } from '@angular/material/datepicker'
@@ -19,7 +19,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
-
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,6 +39,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { CadastroCidadeComponent } from './cidades/cadastro-cidade/cadastro-cidade.component';
 import { EditarCidadeComponent } from './cidades/editar-cidade/editar-cidade.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -78,12 +78,14 @@ import { HttpClientModule } from '@angular/common/http';
     MatStepperModule,
     MatRadioModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     ButtonModule,
     RadioButtonModule,
     InputNumberModule,
     TooltipModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxMaskModule.forRoot()
 
   ],
   providers: [],
